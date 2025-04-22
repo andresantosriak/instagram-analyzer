@@ -1,0 +1,86 @@
+Objetivo:
+Criar um sistema completo de Análise de Perfis de Instagram, integrando Inteligência Artificial via OpenAI, onde o usuário pode adicionar sua própria API Key. Cada etapa da análise e criação de conteúdo será realizada por agentes específicos de IA.
+
+⚙️ Estrutura Principal:
+- Criar campo de configuração para que o usuário adicione a sua OpenAI API Key.
+- Validar a chave da OpenAI antes de permitir iniciar o fluxo.
+- Após validação, o sistema utilizará agentes independentes conectados à OpenAI.
+
+🧩 Entrada de Dados:
+- Nome do perfil do Instagram (@username).
+- Número de seguidores.
+- Texto da biografia (bio).
+- Link principal da bio (opcional).
+- Imagem de perfil (opcional — URL ou upload).
+- Links de até 5 posts recentes (opcional).
+
+🔗 Agentes de IA a serem criados e suas funções:
+
+1. **Agente de Análise de Perfil**
+   - Analisar número de seguidores, imagem de perfil, link da bio e temas principais detectados.
+   - Classificar tamanho do perfil (Micro, Médio, Grande) e sugerir estratégia inicial.
+   - Prompt base: 
+     > "Análise crítica do perfil @username no Instagram, considerando número de seguidores, imagem de perfil, link na bio e possíveis temas."
+
+2. **Agente de Análise de Biografia (Bio)**
+   - Avaliar o texto da bio: nicho, palavras-chave, tom de comunicação (formal/informal/motivacional/técnico), qualidade do CTA.
+   - Sugerir melhorias específicas de forma amigável.
+   - Prompt base:
+     > "Analise o seguinte texto de biografia do Instagram: {bio}. Informe qual o nicho, tom de escrita, qualidade do CTA, e sugira melhorias detalhadas."
+
+3. **Agente de Análise de Link da Bio**
+   - Verificar objetivo do link (página de vendas, captura, institucional).
+   - Sugerir a melhor prática para a bio link.
+   - Prompt base:
+     > "Analise o seguinte link da bio do Instagram: {link}. Informe qual o objetivo percebido e sugira melhorias adequadas ao perfil."
+
+4. **Agente de Análise de Feed (últimos posts)**
+   - Analisar tipo de conteúdo dos últimos posts (imagem, carrossel, vídeo).
+   - Detectar objetivo dos posts (informar, engajar, vender, entreter).
+   - Avaliar qualidade da copy (presença de perguntas, interação, CTA).
+   - Prompt base:
+     > "Analise os seguintes posts do Instagram: {lista de posts}. Classifique tipo de conteúdo, objetivo dos posts e qualidade de interação."
+
+5. **Agente de Criação de Conteúdo Estratégico**
+   - Sugerir ideias de posts para:
+     - Carrossel
+     - Stories Interativos
+     - Mini-roteiro para Reels
+   - Separar sugestões por categorias: Educacional, Inspiracional, Bastidores, Comercial (vendas).
+   - Prompt base:
+     > "Baseado nas análises anteriores, gere ideias de posts para carrosséis, reels e stories que melhorem a performance do perfil @username, considerando o público-alvo identificado."
+
+6. **Agente de Criação de Copywriting para Posts**
+   - Gerar copies personalizadas para imagens, carrosséis e vídeos (reels).
+   - Respeitar o tom do perfil e o objetivo do conteúdo.
+   - Prompt base:
+     > "Crie copywriting de alta conversão para posts no Instagram no nicho {nicho}, focado em {objetivo}, adaptado ao estilo de comunicação {formal/informal/motivacional}."
+
+7. **Agente de Criação de Imagens Conceituais**
+   - Sugerir temas e estilos visuais para criação de imagens em IA (Midjourney, Leonardo, etc.).
+   - Criar descrições de briefing baseadas no objetivo de comunicação.
+   - Prompt base:
+     > "Sugira temas e estilos visuais para imagens de Instagram no nicho {nicho}, focados em {objetivo}. Crie breves descrições para geração em IA de imagens."
+
+📄 Saída esperada:
+- Texto estruturado em Títulos, Análises e Recomendações.
+- Sempre citar o @username para personalização e criar conexão.
+- Estilo de resposta consultivo, humano e direcionado à ação prática.
+
+📦 Relatório final:
+- Pontuação geral (com breve explicação da metodologia).
+- Organização em abas:
+  - Pontos Fortes
+  - Melhorias
+  - Ações Recomendadas
+  - Conteúdo Estratégico
+- Exportação possível em PDF ou link compartilhável.
+
+⚡ Regras Técnicas:
+- Cada agente de IA funciona de forma modular e independente.
+- Todas as chamadas respeitam a quota da API Key do usuário.
+- Se a API Key for inválida ou apresentar erro, informar de forma amigável e impedir a execução do fluxo.
+- Estruturar o sistema para permitir futuras expansões (ex: análise de stories, análise de anúncios pagos).
+
+🌟 Observação Final:
+Priorizar modularidade e flexibilidade para escalar o sistema com novos agentes ou novas fontes de dados (como futura integração com Instagram Graph API).

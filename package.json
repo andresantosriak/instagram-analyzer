@@ -1,0 +1,38 @@
+{
+  "name": "instagram-analyzer-backend",
+  "version": "1.0.0",
+  "description": "Backend para o sistema de Análise de Perfis de Instagram",
+  "main": "dist/scripts/start.js",
+  "scripts": {
+    "start": "node dist/scripts/start.js",
+    "dev": "ts-node src/scripts/start.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "instagram",
+    "análise",
+    "openai",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "openai": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.16.0",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
